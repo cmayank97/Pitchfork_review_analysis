@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+.s003 {
+  display: -ms-flexbox;
+  display: flex;
+  height:300px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center center;
+}
+
+.s003 form {
+  width: 100%;
+  max-width: 790px;
+  margin-bottom: 0;
+}
+
+.s003 form .inner-form {
+  background: #fff;
+  width: 100%;
+  height:200px;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.s003 form .inner-form .textarea-field {
+  height: 200px;
+}
+
+.s003 form .inner-form .textarea-field textarea {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 32px;
+  font-size: 16px;
+  color: #555;
+}
+
+.s003 form .inner-form .textarea-field textarea.placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+.s003 form .inner-form .textarea-field textarea:-moz-placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+.s003 form .inner-form .textarea-field textarea::-webkit-textarea-placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+.s003 form .inner-form .textarea-field textarea:hover, .s003 form .inner-form .textarea-field textarea:focus {
+  box-shadow: none;
+  outline: 0;
+  border-color: #fff;
+}
+
+.s003 form .inner-form .textarea-field.second-wrap {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.s003 form .inner-form .textarea-field.third-wrap {
+  width: 200px;
+  margin:auto;
+}
+
+.s003 form .inner-form .textarea-field.third-wrap .btn-search {
+  height: 50px;
+  width: 100%;
+  margin: 5px 0;;
+  white-space: nowrap;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  background: #6d7fcc;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.s003 form .inner-form .textarea-field.third-wrap .btn-search:hover {
+  background: #7386d5;
+}
+
+.s003 form .inner-form .textarea-field.third-wrap .btn-search:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 992px) {
+  .s003 form .inner-form .textarea-field {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .s003 form .inner-form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 20px;
+  }
+  .s003 form .inner-form .textarea-field {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .s003 form .inner-form .textarea-field textarea {
+    padding: 10px 15px;
+  }
+  .s003 form .inner-form .textarea-field.second-wrap {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .s003 form .inner-form .textarea-field.second-wrap textarea {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .s003 form .inner-form .textarea-field.third-wrap {
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
+#wrapper1 {
+  display: flex;
+  text-align:center;
+  margin:0 auto;
+  width:300px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center center;
+}
+
+#left
+{
+    flex: 0 0 60%;
+}
+#right
+{
+    flex:1;
+}

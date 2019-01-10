@@ -1,0 +1,19 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>MODEL COMPARISON</span>
+{% endblock %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/comparison.css')}}" rel="stylesheet" />
+<div class="main">
+<div class="box">
+    <img src="{{ url_for('static', filename='images/model_comparison.png') }}"/></div>
+<div id="wrapper">
+<h5> Model Accuracy</h5>
+        {% for model_name, score in scores.items() %}
+        <p>{{ model_name }} : {{ score }}</p>
+        {% endfor %}
+</div>
+</div>
+{% endblock %}
+
+

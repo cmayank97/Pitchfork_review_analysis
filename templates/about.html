@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/about.css')}}" rel="stylesheet" />
+<div id="about">
+    <div id="left"><img src="{{ url_for('static',filename='images/project.png')}}" style="width:100px; height:100px;"/></div>
+    <div id="right"><h3>ABOUT PROJECT</h3></div>
+</div>
+<div class="about_content">
+    <p>Pitchfork is a music-centric online magazine.
+    It was started in 1995 and grew out of independent music reviewing into a general publication format,
+    but is still famed for its variety music reviews. I scraped over 18,000 Pitchfork reviews
+    (going back to January 1999). Initially, this was done to satisfy a few of my own curiosities,
+    but I bet Kagglers can come up with some really interesting analyses!</p>
+
+    <hr>
+    <p>
+    Dataset
+    The dataset consists of 18,393 Pitchfork Reviews from Jan 5, 1999 to Jan 8, 2017.<br>
+    It is contained in a sqlite database with the following tables:<br>
+    *    artists - list of all artists reviewed<br>
+    *    content - list of content of the reviews<br>
+    *    genres - list of all genres reviewed<br>
+    *    labels - list of publishing labels of the albums and songs reviewed<br>
+    *    reviews - list of reviews<br>
+    *    years - list of years the reviews were published<br>
+    </p>
+    <hr>
+    <p>
+    Our goal in this project was to find out different apects of
+    the data on music reviews such as how over the year's the choice of music has changed,
+    do the day of week decide the score for the album.We have tried to represent all these
+    things using various type of graphs. We analyzed the sentiment of the comments given by
+    the user for a particular album and generate a score which we check by the actual score given by user.
+    To present all this we have made a web app using flask framework in python that to
+    represent all we have analyzed from the data set of Pitchfork Dataset.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'header.html' %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/predict.css')}}" rel="stylesheet" />
+<div id="wrapper1">
+    <div id="left"><img src="{{ url_for('static',filename='images/sentiment.png')}}" style="width:200px; height:100px;"/></div>
+    <div id="right"><h3>SENTIMENT PREDICTION</h3></div>
+</div>
+<div class="s003">
+  <form id="search_form"  method="post" action="{{ url_for('result') }}">
+    <div class="inner-form">
+      <div class="textarea-field second-wrap">
+          <textarea placeholder="Enter your review" id="review" name="review" rows="10" cols="100"></textarea>
+      </div>
+      <div class="textarea-field third-wrap">
+        <button class="btn-search" type="submit">PREDICT</button>
+      </div>
+    </div>
+  </form>
+</div>
+<h4 style="margin:20px auto; text-align:center;">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</h4>
+{% endblock %}

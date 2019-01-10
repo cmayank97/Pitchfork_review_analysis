@@ -1,0 +1,32 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>RIDGE CLASSIFIER</span>
+{% endblock %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/model.css')}}" rel="stylesheet" />
+<div id="wrapper">
+<div class="box1">
+<p>
+Ridge regression, as the name suggests, is a method for regression rather than classification.
+Presumably you are using a threshold to turn it into a classifier. In any case, you are simply
+learning a linear classifier that is defined by a hyperplane. The reason it is working is
+because the task at hand is essentially linearly separable - i.e. a simple hyperplane is all
+that is needed to separate the classes. The "ridge" parameter allows it to work in cases that
+are not completely linearly separable or problems which are rank deficient (in which case the
+optimisation would be degenerate).</p>
+<p>
+In this case, there is no reason why other classifiers shouldn't also perform well,
+assuming that they have been implemented correctly. For example, the SVM finds the
+"optimal separating hyperplane" (i.e. the hyperplane that maximises the margin, or
+gap, between the classes). The C parameter of the SVM is a capacity control parameter
+analogous to the ridge parameter, which allows for some misclassifications (outliers).
+Assuming the parameter selection process has been carried out diligently, I would expect
+the two methods to produce almost exactly the same results on such a dataset.</p>
+</div>
+<div class="box2">
+    <div>
+    <p>Accuracy = {{ score }}</p>
+    </div>
+    <img src="{{ graph }}" /></div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>LOGISTIC REGRESSION</span>
+{% endblock %}
+
+{% block container %}
+<link href="{{ url_for('static',filename='css/model.css')}}" rel="stylesheet" />
+<div id="wrapper">
+<div class="box1">
+<div>
+     <center>
+    <img height="200px" width="400px" src="{{ url_for('static', filename='images/logistic.png') }}"></center>
+</div>
+<p>
+    In statistics, the logistic model (or logit model) is a widely used statistical model that,
+    in its basic form, uses a logistic function to model a binary dependent variable; many more complex extensions exist.
+    In regression analysis, logistic regression (or logit regression) is estimating the parameters of a logistic model;
+    it is a form of binomial regression.
+</p>
+<p>
+    Multinomial logistic regression is a classification method that generalizes logistic regression to multiclass problems,
+    i.e. with more than two possible discrete outcomes. That is, it is a model that is used to predict the
+    probabilities of the different possible outcomes of a categorically distributed dependent variable,
+    given a set of independent variables (which may be real-valued, binary-valued, categorical-valued, etc.).
+</p>
+<p>
+    The idea behind MLR, as in many other statistical classification techniques, is to construct a linear
+    predictor function that constructs a score from a set of weights that are linearly combined with the explanatory
+    variables (features) of a given observation using a dot product: <br>
+    <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d7810d95ad9b2bfbe7384432e83fa311ace76b03"> <br>
+    where Xi is the vector of explanatory variables describing observation i, βk is a vector of weights (or regression coefficients)
+    corresponding to outcome k, and score(Xi, k) is the score associated with assigning observation i to category k.
+    In discrete choice theory, where observations represent people and outcomes represent choices, the score is considered
+    the utility associated with person i choosing outcome k. The predicted outcome is the one with the highest score.
+</p>
+</div>
+<div class="box2">
+    <div>
+    <p>Accuracy = {{ score }}</p>
+    </div>
+    <img src="{{ graph }}" />
+</div>
+</div>
+{% endblock %}
+
+

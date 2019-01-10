@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>REVIEWS ANALYSIS TECHNIQUES</span>
+{% endblock %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/analysis.css')}}" rel="stylesheet" />
+<div class="contentt">
+    <p>
+        The first step in our sentiment analysis is to clean the text. Before the text can be used, it needs to be
+        processed. Processing entails the removal of stop words, punctuations etc. from the text. They do not
+        contribute towards the sentiment of the text.
+    </p>
+    <p>
+        Once the text has been processed, it is ready for analysis. First we round the actual score of the review
+        to the nearest whole number. This creates 11 classes to be used in our classification process. The goal now
+        becomes to analayse the processed text and classify it into one of these 11 classes.
+    </p>
+    <p>
+        Every review is fed in to a tf-idf vectoriser. tf–idf or TFIDF, short for term frequency–inverse document
+        frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a
+        collection or corpus. It is often used as a weighting factor in searches of information retrieval,
+        text mining, and user modeling. The tf–idf value increases proportionally to the number of times a word
+        appears in the document and is offset by the number of documents in the corpus that contain the word, which
+        helps to adjust for the fact that some words appear more frequently in general.
+    </p>
+    <p>
+        Once the tf-idf vectoriser has been constructed, it is used by an algorithm like logistic regression
+        to construct a model i.e. the model is trained and can be further used for classification tasks.
+    </p>
+</div>
+
+<div id="wrapper">
+    <div class="box1">
+    <p>
+        The most important features of the tf-idf vectoriser are
+    </p>
+    <table>
+        {% for feature, score in tfidf.items() %}
+        <tr>
+            <td>{{ feature }}</td>
+            <td>{{ score }}</td>
+        </tr>
+        {% endfor %}
+    </table></div>
+    <div class="box2">
+    <p>And the word cloud looks like this </p>
+    <img src="{{ url_for('static', filename='images/wordcloud.png') }}" /></div>
+</div>
+
+{% endblock %}
+
+

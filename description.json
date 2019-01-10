@@ -1,0 +1,16 @@
+[{
+  "name": "MOST/LEAST HIGHLY RATED ARTIST",
+  "value": "Avg(score) vs. Artists => The average scores of reviews grouped by artists who have released atleast 5 albums. (The top 10 and bottom 5 are shown here)There is a delta of 5.84 between the top and the bottom. The Velvet Underground is the best performer while The Dandy Warhols are the worst."
+}, {
+  "name": "AVERAGE SCORE OVER THE YEAR ON PARTICULAR WEEK DAY",
+  "value": "Avg(score) vs Weekday => The average scores of reviews grouped by day of the week.There scores are consistent overall with reviews that were released on Saturday having a marginally higher score."
+}, {
+  "name": "GENRE CHANGE OVER THE YEARS",
+  "value": "Reviews vs pub_year => The change in amount of reviews published for a various genre over the years.Rock seems to be the favoured genre of the reviewers at Pitchfork, with Electronic coming at a distant second. Global and Jazz seem to be the least favoured genres to review. This is most likely a result of there being more Rock albums being produced than other genres."
+}, {
+  "name": "AVERAGE SCORE FOR EACH GENRE OVER THE YEARS",
+  "value": "Genre vs Avg(score) => The average scores of reviews grouped by genres.There isn't much variance in the scores. Global is the best performer while Pop/R&B is the worst. The delta is only 0.55.This could be a result of Pop/Rap being mainstream and Global/Experimental being a niche genre."
+}, {
+  "name": "HIGHEST AVERAGE SCORE BY AUTHOR WHO HAVE WRITTEN  MORE THAN 100 REVIEWS",
+  "value": "Avg(score) vs author => The average scores of reviews grouped by authors who have written atleast a 100 reviews. (The top 10 and bottom 5 are shown here)The authors who write a lot of reviews seem to give an average score of 7. There is a delta of < 1 betwwen the top and bottom performer."
+}]

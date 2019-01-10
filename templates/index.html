@@ -1,0 +1,47 @@
+{% extends 'header.html' %}
+
+{% block container %}
+<link href="{{ url_for('static',filename='css/index.css')}}" rel="stylesheet" />
+<div id="wrapper1">
+    <div id="left"><img src="{{ url_for('static',filename='images/icon.png')}}" style="width:100px; height:100px;"/></div>
+    <div id="right"><h3>EXPLORE DATABASE</h3></div>
+</div>
+ <div class="s003">
+  <form id="search_form"  method="post" action="{{ url_for('artist_stats') }}">
+    <div class="inner-form">
+      <div class="input-field second-wrap">
+          <script>
+            function myfunction(a) {
+                $('#search').val(a);
+                $('#results').hide();
+            }
+            </script>
+            <input id="search" autocomplete="off" name="name" type="text" placeholder="Enter artist name" onkeyup="liveSearch(this.value)" />
+          <div class="results" id="results" >
+		 </div>
+      </div>
+      <div class="input-field third-wrap">
+        <button class="btn-search" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript" src="{{ url_for('static',filename='js/live_search.js')}}"></script>
+<p style="margin:0 auto; text-align:center;"> SEARCH BY GENRE</p>
+<div class="genre">
+<form  action="{{ url_for('genre_albums') }}" method="post">
+    <div class="inner-form">
+      <div class="input-field second-wrap">
+        <select name="Genre">
+            {% for genre in genre %}
+            <option value="{{ genre }}">{{ genre }}</option>
+            {% endfor %}
+        </select>
+      </div>
+      <div class="input-field third-wrap">
+        <button class="btn-search" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pitchfork Review Analysis</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/favicon.png')}}" sizes="16x16" type="image/png">
+    <!-- CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <!--Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <!-- Javascript CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>PITCHFORK</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Algorithm</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="{{ url_for('models', name='MultinomialNB')  }}">Naive Bayes</a></li>
+                        <li><a href="{{ url_for('models', name='RandomForestClassifier')  }}">Random forest</a></li>
+                        <li><a href="{{ url_for('models', name='LogisticRegression')  }}">Logistic Regression</a></li>
+                        <li><a href="{{ url_for('models', name='LinearSVC')  }}">LinearSVC (SVM)</a></li>
+                        <li><a href="{{ url_for('models', name='RidgeClassifier')  }}">RidgeClassifier</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{ url_for('comparison') }}">Model Comparison</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('analysis') }}">Analysis Techniques</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('prediction') }}">Sentiment Prediction</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('insights') }}">Insights</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}">About Project</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://github.com/valkyreth/pitchfork-analysis/archive/master.zip" class="download">Download source</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <div class="container-fluid">
+                    <span id = "navbar-button">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button></span>
+                {% block heading %} {% endblock %}
+                {% block container %} {% endblock %}
+                <a href="{{ url_for('index') }}"><button id="myBtn" title="Go Home">Home</button></a>
+            </div>
+        </div>
+    </div>
+     <script type="text/javascript" src="{{ url_for('static',filename='js/sidebar.js')}}"></script>
+</body>
+</html>

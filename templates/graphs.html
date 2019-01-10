@@ -1,0 +1,27 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>INSIGHTS : DATA MINING</span>
+{% endblock %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/insights.css')}}" rel="stylesheet" />
+<div id="wrapper">
+<div class="box1">
+    {% for graph in graphs.values() %}
+    <div class="childbox">
+        <img src="{{graph}}"/>
+    </div>
+    {% endfor %}
+</div>
+<div class="box2">
+    {% for i in data %}
+    <div class="childbox">
+        <h5>{{i.name}}</h5>
+        <hr>
+        <p>{{i.value}}</p>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
+
+

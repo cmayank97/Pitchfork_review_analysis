@@ -1,0 +1,39 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>MULTINOMIAL NAIVE BAYES</span>
+{% endblock %}
+{% block container %}
+<link href="{{ url_for('static',filename='css/model.css')}}" rel="stylesheet" />
+<div id="wrapper">
+<div class="box1">
+<div>
+    <center>
+    <img height="200px" width="400px" src="{{ url_for('static', filename='images/mnb.png') }}"></center>
+</div>
+<p>
+Naive Bayes is a classification algorithm for binary (two-class) and multi-class classification problems.
+The technique is easiest to understand when described using binary or categorical input values.
+It is called naive Bayes or idiot Bayes because the calculation of the probabilities for each hypothesis are simplified
+to make their calculation tractable. Rather than attempting to calculate the values of each attribute value
+P(d1, d2, d3|h), they are assumed to be conditionally independent given the target value and calculated as P(d1|h) * P(d2|H) and so on.</p>
+
+<p>
+This is a very strong assumption that is most unlikely in real data, i.e. that the attributes do not interact.
+Nevertheless, the approach performs surprisingly well on data where this assumption does not hold.</p>
+<p>
+Representation Used By Naive Bayes Models
+The representation for naive Bayes is probabilities.</p>
+<p>
+A list of probabilities are stored to file for a learned naive Bayes model. This includes:
+Class Probabilities: The probabilities of each class in the training dataset.
+Conditional Probabilities: The conditional probabilities of each input value given each class value.</p>
+</div>
+<div class="box2">
+    <div>
+    <p>Accuracy = {{ score }}</p>
+    </div>
+    <img src="{{ graph }}" /></div>
+</div>
+{% endblock %}
+
+

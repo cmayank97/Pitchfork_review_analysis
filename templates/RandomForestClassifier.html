@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+{% block heading %}
+<span>RANDOM FOREST CLASSIFIER</span>
+{% endblock %}
+
+{% block container %}
+<link href="{{ url_for('static',filename='css/model.css')}}" rel="stylesheet" />
+<div id="wrapper">
+<div class="box1">
+<p>
+Random forests, also known as random decision forests, are a popular ensemble method that
+can be used to build predictive models for both classification and regression problems.
+Ensemble methods use multiple learning models to gain better predictive results — in the case
+of a random forest, the model creates an entire forest of random uncorrelated decision trees to
+arrive at the best possible answer.</p>
+<p>
+Decision trees are simple but intuitive models that utilize a top-down approach in which the
+root node creates binary splits until a certain criteria is met. This binary splitting of nodes
+provides a predicted value based on the interior nodes leading to the terminal (final) nodes.
+In a classification context, a decision tree will output a predicted target class for each terminal
+node produced. Although intuitive, decision trees have limitations that prevent them from being
+useful in machine learning applications.</p>
+<p>
+Random Forest
+Random forest aims to reduce the previously mentioned correlation issue by choosing only a
+subsample of the feature space at each split. Essentially, it aims to make the trees
+de-correlated and prune the trees by setting a stopping criteria for node splits.</p>
+</div>
+<div class="box2">
+    <div>
+        <p>Accuracy = {{ score }}</p>
+    </div>
+    <img src="{{ graph }}" />
+</div>
+</div>
+{% endblock %}
+
+
